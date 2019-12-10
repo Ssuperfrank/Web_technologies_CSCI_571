@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">WeatherApp</string>
+    <string name="search">search</string>
+
+    <string name="tab_today">TODAY</string>
+    <string name="tab_weekly">WEEKLY</string>
+    <string name="tab_photos">PHOTOS</string>
+    <string name="twitter">Twitter</string>
+
+
+    <string name="today_windSpeed">Wind Speed</string>
+    <string name="today_pressure">Pressure</string>
+    <string name="today_precipitation">Precipitation</string>
+    <string name="today_temperature">Temperature</string>
+    <string name="today_humidity">Humidity</string>
+    <string name="today_visibility">Visibility</string>
+    <string name="today_cloudCover">Cloud Cover</string>
+    <string name="today_ozone">Ozone</string>
+
+
+    <string name="today_icon_clear_day">clear day</string>
+    <string name="today_icon_clear_night">clear night</string>
+    <string name="today_icon_rain">rain</string>
+    <string name="today_icon_snow">snow</string>
+    <string name="today_icon_sleet">sleet</string>
+    <string name="today_icon_wind">wind</string>
+    <string name="today_icon_fog">fog</string>
+    <string name="today_icon_cloudy">cloudy</string>
+    <string name="today_icon_partly_cloudy_day">cloud day</string>
+    <string name="today_icon_partly_cloudy_night">cloudy night</string>
+    <string name="title_activity_search">SearchActivity</string>
+
+
+</resources>

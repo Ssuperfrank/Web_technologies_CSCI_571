@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#000000</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="appBackground">#000000</color>
+    <color name="ic_launcher_background">#000000</color>
+    <color name="cardBackgroud">#1C1C1C</color>
+    <color name="lighterBlack">#848484</color>
+    <color name="whiteText">#FFF</color>
+    <color name="iconColor">#BB86FC</color>
+
+
+    <color name="chartMin">#BB86FC</color>
+    <color name="chartMax">@android:color/holo_orange_light</color>
+
+
+    <color name="boxline">@android:color/darker_gray</color>
+</resources>
