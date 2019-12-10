@@ -1,0 +1,68 @@
+<div class="container">
+  <br>
+  <div class="jumbotron col-sm-10 m-auto border border-dark align-middle" style="background-color: #6D91A9; box-shadow: 5px 5px 5px grey">
+    <div>
+      <form id="search-form" class="text-light col-sm-9 m-auto" (ngSubmit)="search()" [formGroup]="searchForm">
+
+        <div class="text-center">
+          <h1>Weather Search</h1>
+        </div>
+        <br>
+
+        <div class="form-group row">
+          <label for="street" class="col-form-label row col-sm-3">Street<span style="color:red;">*</span></label>
+          <div class="col-sm-9 pl-0" >
+            <input formControlName="street" class="form-control" name="street" id="street" type="text" placeholder="Entry Street Name" required="required">
+            <div *ngIf="searchForm.controls.street.invalid && (searchForm.controls.street.dirty || searchForm.controls.street.touched)">
+              <div class="feedback">Please enter a street.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group row ">
+          <label for="city" class="col-form-label row col-sm-3">City<span style="color:red;"> *</span></label>
+          <div class="col-sm-9 pl-0">
+            <div>
+              <input formControlName="city" class="form-control" name="city" id="city" type="text" placeholder="Entry City Name" required="required" (keyup) ="autoComplete($event.target?.value)" matInput [matAutocomplete]="auto">
+              <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let loca of autoCompleteList" [value]="loca">
+                  {{loca}}
+                </mat-option>
+              </mat-autocomplete>
+            </div>
+            <div *ngIf="searchForm.controls.city.invalid && (searchForm.controls.city.dirty || searchForm.controls.city.touched)">
+              <div class="feedback">Please enter a city.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="state" class="col-form-label row col-sm-3">State<span style="color:red;"> *</span></label>
+          <div class="col-sm-6 pl-0">
+            <select formControlName="state" class="form-control" id="state" name="state">
+              <option *ngFor="let state of stateList" [value]="state.Abbreviation">{{state.State}}</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group row" style="margin-left: 5px;">
+          <input formControlName="current" type="checkbox" class="form-check-input" name="current-location" id="current-location" (click)="currentLocation()">
+          <label for="current-location" class="form-check-label">Current location</label>
+        </div>
+
+        <button type="submit" class="btn btn-light" style="border-color: black" [disabled]="searchForm.invalid"><i style="vertical-align: middle" class="material-icons">search</i> Search</button>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="button" class="btn btn-light" style="border-color: black" (click)="clear()"><i style="vertical-align: middle" class="material-icons">clear_all</i>Clear</button>
+
+        <br>
+        <br>
+      </form>
+    </div>
+  </div>
+
+  <br>
+    <app-result-container [searchTime] = 'clickTime' [showResult]="showResult" (toParent) = "searchCity($event)"></app-result-container>
+
+  <br>
+  <br>
+</div>

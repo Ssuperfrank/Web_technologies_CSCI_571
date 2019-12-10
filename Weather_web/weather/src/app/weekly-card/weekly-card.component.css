@@ -1,0 +1,31 @@
+@media (min-width: 414px) {
+  #date {
+    font-size: 1.2em;
+  }
+
+  #city {
+    font-size: 1.5em;
+  }
+}
+
+@media (min-width: 300px) {
+  #date {
+    font-size: 1.1em;
+  }
+
+  #city {
+    font-size: 1.4em;
+  }
+}
+
+
+@media (min-width: 900px) {
+  #date {
+    font-size: 1.8em;
+  }
+  #city {
+    font-size: 2em;
+  }
+
+}
+

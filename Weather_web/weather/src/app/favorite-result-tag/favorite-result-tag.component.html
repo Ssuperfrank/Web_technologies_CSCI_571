@@ -1,0 +1,29 @@
+<div *ngIf="isEmpty">
+  <div class="alert-warning"  style="border-color: orange; border-radius: 10px">
+    <br>
+    <p class="offset-sm-1">No Records.</p>
+    <br>
+  </div>
+</div>
+
+<div *ngIf="!isEmpty">
+  <div class="table-responsive">
+    <table class="table col-12" style="text-align: center">
+      <tr style="background-color: #6E91AA">
+        <th style="width: 20%">#</th>
+        <th style="width: 20%">Image</th>
+        <th style="width: 20%">City</th>
+        <th style="width: 20%">State</th>
+        <th style="width: 20%">Favorites</th>
+      </tr>
+
+      <tr *ngFor="let record of storage" [style.background-color]=" storage.indexOf(record) % 2 == 0? '#A5D0EE':'#6E91AA' ">
+        <td>{{storage.indexOf(record)+1}} </td>
+        <td><img style="width:45px;height:45px" [src]="record.seal"></td>
+        <td><a style="color: blue" (click)="searchCity(record)"  placement="bottom"   [ngbTooltip]="record.city">{{record.city}}</a></td>
+        <td>{{record.state}}</td>
+        <td><button class="btn" style="background-color: white"><i  class="material-icons" style="color: orange; vertical-align: middle" (click)="deleteCity(record)">delete</i></button></td>
+      </tr>
+    </table>
+  </div>
+</div>

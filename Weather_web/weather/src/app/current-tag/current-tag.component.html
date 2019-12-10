@@ -1,0 +1,71 @@
+<div class="col-sm-10 m-auto card" id="current-card">
+
+  <div class="offset-1 ">
+    <br>
+    <br>
+    <p id="city">{{city}}</p>
+    <p id="timezone">{{timezone}}</p>
+    <br>
+  </div>
+  <div class="row">
+    <div class="col-5 offset-1">
+        <h2 style="font-size: 2em;" *ngIf="currentWeatherInfo">{{currentWeatherInfo.temperature.toFixed()}} <img style="vertical-align: top" src="assets/button_shape_oval-512.png" height="10px">F</h2>
+      <br>
+        <p style="font-size: 1.5em;" *ngIf="currentWeatherInfo">{{currentWeatherInfo.summary}}</p>
+      <br>
+      <br>
+      <br>
+    </div>
+    <div class="col-5"  >
+        <img  class="m-auto col-12"  [src]="sealSrc">
+    </div>
+  </div>
+  <div class="col-12">
+      <table class="col-12" style="text-align: center">
+        <tr>
+          <td  *ngIf="currentWeatherInfo && currentWeatherInfo.humidity > 0">
+            <img style="width: 40px; height: 40px;" src="assets/weather-card/weather-16-512.png"  placement="top"   ngbTooltip="Humidity" >
+          </td>
+          <td  *ngIf="currentWeatherInfo  && currentWeatherInfo.pressure > 0">
+            <img  style="width: 40px; height: 40px;" src="assets/weather-card/weather-25-512.png" placement="top" ngbTooltip="Pressure">
+          </td>
+          <td   *ngIf="currentWeatherInfo  && currentWeatherInfo.windSpeed > 0">
+            <img  style="width: 40px; height: 40px;" src="assets/weather-card/weather-27-512.png" placement="top" ngbTooltip="WindSpeed">
+          </td>
+          <td   *ngIf="currentWeatherInfo  && currentWeatherInfo.visibility > 0">
+            <img  style="width: 40px; height: 40px;" src="assets/weather-card/weather-30-512.png" placement="top"   ngbTooltip="Visibility">
+          </td>
+          <td  *ngIf="currentWeatherInfo  && currentWeatherInfo.cloudCover > 0">
+            <img  style="width: 40px; height: 40px;" src="assets/weather-card/weather-28-512.png" placement="top"   ngbTooltip="CloudCover">
+          </td>
+          <td   *ngIf="currentWeatherInfo  && currentWeatherInfo.ozone > 0">
+            <img  style="width: 40px; height: 40px;" src="assets/weather-card/weather-24-512.png" placement="top"   ngbTooltip="Ozone">
+          </td>
+        </tr>
+        <tr>
+          <td *ngIf="currentWeatherInfo  && currentWeatherInfo.humidity > 0">
+              {{currentWeatherInfo.humidity}}
+          </td>
+          <td *ngIf="currentWeatherInfo  && currentWeatherInfo.pressure > 0">
+              {{currentWeatherInfo.pressure}}
+          </td>
+          <td *ngIf="currentWeatherInfo  && currentWeatherInfo.windSpeed > 0">
+              {{currentWeatherInfo.windSpeed}}
+          </td>
+          <td *ngIf="currentWeatherInfo  && currentWeatherInfo.visibility > 0">
+              {{currentWeatherInfo.visibility}}
+          </td>
+          <td *ngIf="currentWeatherInfo  && currentWeatherInfo.cloudCover > 0">
+              {{currentWeatherInfo.cloudCover}}
+          </td>
+          <td *ngIf="currentWeatherInfo  && currentWeatherInfo.ozone > 0">
+              {{currentWeatherInfo.ozone}}
+          </td>
+        </tr>
+      </table>
+    <br>
+    <br>
+
+  </div>
+  <br>
+</div>

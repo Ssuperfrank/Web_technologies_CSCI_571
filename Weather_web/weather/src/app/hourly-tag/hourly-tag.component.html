@@ -1,0 +1,9 @@
+<div>
+<form [formGroup]="optionForm">
+  <select class="form-control col-sm-3" formControlName="options">
+    <option *ngFor="let option of selectOptions">{{option}}</option>
+  </select>
+</form>
+</div>
+
+<app-bar-chart [chartData]= 'chartData[optionForm.controls.options.value]' [charTitle] = [optionForm.controls.options.value]></app-bar-chart>

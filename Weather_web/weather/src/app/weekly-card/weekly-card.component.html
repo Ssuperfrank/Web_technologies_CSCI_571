@@ -1,0 +1,65 @@
+<div id="myModal" class="modal" *ngIf="displayStatus">
+  <br>
+  <br>
+    <div class="m-auto col-sm-6" *ngIf="showResult">
+
+      <div class="modal-header" style="background-color: #6592AD">
+        <h1 id="date" class="col-sm-10">{{dateOfModal}}</h1>
+        <button type="button" class="text-dark border-0 col-sm-2" style="background-color: #6592AD" (click)="closeModal()" >X</button>
+      </div>
+
+      <div class="modal-body" style="background-color: #9CD1F1">
+        <div class="row">
+          <div class="col-xs-8">
+            <ul style="list-style-type: none">
+              <li>
+                <h1 id="city">{{city}}</h1>
+              </li>
+              <li>
+                <h2 style="font-size: 2em">{{weatherInfo.temperature.toFixed()}}  <img style="vertical-align: top" src="assets/button_shape_oval-512.png" height="5px"> F</h2>
+              </li>
+              <li>
+                <p style="font-size: 1.5em">{{weatherInfo.summary}}</p>
+              </li>
+            </ul>
+          </div>
+          <div class="col-xs-4 offset-2" style="vertical-align: middle;" >
+            <img style="width: 100px; height: 100px;" [src] ="icon[weatherInfo.icon]" alt="icon">
+          </div>
+        </div>
+        <hr width="80%">
+        <div class="offset-sm-6">
+          <ul style="list-style-type: none; line-height: 10px">
+            <li>
+              <p *ngIf="weatherInfo.precipIntensity === undefined">Precipitation: N/A</p>
+              <p *ngIf="weatherInfo.precipIntensity == 0">Precipitation: 0</p>
+              <p *ngIf="weatherInfo.precipIntensity > 0">Precipitation: {{weatherInfo.precipIntensity.toFixed(2)}}</p>
+            </li>
+            <li>
+              <p *ngIf="weatherInfo.precipProbability === undefined">Chance of Rain: N/A</p>
+              <p *ngIf="(weatherInfo.precipProbability*100) == 0">Chance of Rain: 0 %</p>
+              <p *ngIf="(weatherInfo.precipProbability*100) > 0">Chance of Rain: {{(weatherInfo.precipProbability*100).toFixed()}} %</p>
+            </li>
+            <li>
+              <p *ngIf="weatherInfo.windSpeed === undefined">Wind Speed: N/A</p>
+              <p *ngIf="weatherInfo.windSpeed == 0">Wind Speed: 0 mph</p>
+              <p *ngIf="weatherInfo.windSpeed > 0">Wind Speed: {{weatherInfo.windSpeed.toFixed(2)}} mph</p>
+            </li>
+            <li>
+              <p *ngIf="weatherInfo.humidity === undefined">Humidity: N/A</p>
+              <p *ngIf="(weatherInfo.humidity*100) == 0">Humidity: 0 %</p>
+              <p *ngIf="(weatherInfo.humidity*100) > 0">Humidity: {{(weatherInfo.humidity*100).toFixed()}} %</p>
+            </li>
+            <li>
+              <p *ngIf="weatherInfo.visibility === undefined">Visibility: N/A</p>
+              <p *ngIf="weatherInfo.visibility == 0">Visibility: 0 miles</p>
+              <p *ngIf="weatherInfo.visibility > 0">Visibility: {{weatherInfo.visibility.toFixed(2)}} miles</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+
+    </div>
+
+</div>

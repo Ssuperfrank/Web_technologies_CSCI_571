@@ -1,0 +1,30 @@
+#current-card{
+  background-color: #A5D0EE;
+}
+
+#city {
+ font-weight: 400;
+}
+
+#timezone {
+
+}
+
+@media (min-width: 414px) {
+  #city {
+    font-size: 1.5em;
+  }
+  #timezone {
+    font-size: 1.2em;
+  }
+}
+
+@media (min-width: 992px) {
+  #city {
+    font-size: 2em;
+  }
+
+  #timezone {
+    font-size: 2em;
+  }
+}
