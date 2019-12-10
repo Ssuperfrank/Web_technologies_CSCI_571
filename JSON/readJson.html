@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homework 4</title>
+    <style>
+        body{
+            text-align: center;
+            padding-top: 100px;
+        }
+    </style>
+</head>
+<body>
+<script type="text/javascript">
+
+    function loadJSON () {
+        var url = document.getElementById('filename').value;
+        if(url === ''){
+            alert("Please input the file URL!");
+            return;
+        }
+        
+        var xmlhttp= new XMLHttpRequest();
+        if(xmlhttp != null){
+            xmlhttp.open("GET",url,false); //synchronous
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState === XMLHttpRequest.DONE) {
+                    if (xmlhttp.status === 404 || xmlhttp.status === 0) {
+                        alert("Not found the json file!");
+                    }
+                    if (xmlhttp.status === 200) {
+                        var jsonDoc = xmlhttp.responseText;
+
+                        if(jsonDoc === "{}"){
+                            alert("The json file is Empty!");
+                            return;
+                        }
+
+                        var html_content = generate_html(JSON.parse(jsonDoc));
+
+                        if(html_content === null) return;
+
+                        var newHtml = window.open("","Homework 4", "Height: 800, width: 600");
+                        newHtml.document.write(html_content);
+                        newHtml.document.close();
+                    }
+                }
+            }
+            xmlhttp.send(null);
+        }
+    }
+
+    function generate_html(jsonObj){
+        var html_text = "<!DOCTYPE html><html lang=\"en\"><head><meta charset='UTF-8'><title>Largest Manufacturers of Production (2017)</title></head><body>";
+        html_text += "<table border = '1'>";
+        var header = jsonObj.Mainline.Table.Header.Data;
+        html_text += "<tr>";
+        for(var header_title of header){
+            html_text += "<th>" + header_title + "</th>";
+        }
+        html_text += "</tr><tbody align='left'>";
+
+        if(!jsonObj.Mainline.Table.hasOwnProperty("Row")){
+            alert("The file contains no car data!");
+            return null;
+        }
+
+        var rows  = jsonObj.Mainline.Table.Row;
+        for(var i = 0; i < rows.length; i++){
+            var row_text = "<tr>";
+
+            row_text += "<td style='min-width: 50px'>" + rows[i].Rank + "</td>";
+            row_text += "<td style='min-width: 50px'>" + rows[i].Group + "</td>";
+            row_text += "<td style='min-width: 100px'><ul>";
+            var first = true;
+            for(var x of rows[i].Hubs.Hub){
+                if (first) {
+                    row_text +=  "<li style='font-weight: bold'>" + x + "</li>";
+                    first = false;
+                }else{
+                    row_text +=  "<li>" + x + "</li>";
+                }
+            }
+            row_text += "</ul></th>";
+            row_text += "<td style='min-width: 100px'>" + rows[i].Vehicles + "</td>";
+            row_text += "<td style='min-width: 100px'><a href=" + rows[i].HomePage + ">"+ rows[i].HomePage + "</a></td>";
+            if (rows[i].Logo){
+               row_text += "<td style='min-width: 100px'><img src=" + rows[i].Logo + " width='200px' height='200px'></td>";
+            }
+
+            row_text += "</tr>";
+            html_text += row_text;
+        }
+        html_text += "</tbody></table>";
+        html_text += "</bo"+"dy></html>";
+        return html_text;
+    }
+</script>
+
+<P style="font-size: 20px; font-weight: bold;">Enter URL for largest manufacturers by production (2017) List JSON File</P>
+<p><input id="filename" type="text" ></p>
+<button id="submit" type="button" onclick="loadJSON()" >Submit Query</button>
+</body>
+</html>
