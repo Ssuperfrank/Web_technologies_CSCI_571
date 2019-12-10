@@ -7,6 +7,6 @@
 3. PHP  
 	**Weather search**
 4. Ajax, JSON, Responsive Design and NodeJS  
-	**Weather search in Angular2+**
+	[**Weather search in Angular2+**](http://cs-usc-571.us-west-1.elasticbeanstalk.com)
 5. Mobile App Development  
 	**Weather search application in Android**
