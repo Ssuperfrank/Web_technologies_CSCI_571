@@ -1,0 +1,276 @@
+body{
+ 	height: 100%;
+ 	width: 960px;
+ 	margin: 0 auto;
+	overflow: hidden;
+}
+
+
+.header{
+	height: 65px;
+	width: 960px;
+	z-index:1;
+	color: grey;
+	background-color: white; 
+	position: fixed;
+	overflow: hidden;
+}
+
+.header .name{
+	max-width: 100px;
+	margin : 0px;
+	
+	top: 21px;
+	left: 120px;
+	position: absolute;
+
+	font-family:   "Times New Roman", serif; 
+	font-style: italic ;
+	font-size: 20px;
+}
+
+.header .nav{	
+	left: 480px;
+	top: 6.5px;
+	position: absolute;
+	padding: 0;
+    margin: 7px;
+
+	font-family: "Microsoft Sans Serif", sans-serif;
+	font-size: 12px;
+	list-style-type: none;
+}
+
+.header ul li{
+	float: left;
+	overflow: hidden;
+}
+
+.header .nav  a{
+	display: block;
+	padding: 12px;
+	text-align: center;
+	text-decoration: none;
+}
+
+#container{
+	position: absolute;
+	width: 960px;
+	height: 100%;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	perspective: 1px;
+    transform-style: preserve-3d;
+    perspective-origin: 0 0;
+
+}
+
+#home_background{
+	position:absolute;
+	z-index: -2;
+    transform: translate3d(-1750px, -150px, -5px) scale(5.45, 5.3);
+	transform-origin: 0 0;
+}
+
+#home_info {
+	top: 260px;
+	left: 255px;
+	z-index: 0;
+	position: absolute;
+	margin : 0;
+	width: 450px; 
+	height: 250px;
+	background-color: white;
+	/*text-align: center;*/
+}
+
+#info_table{
+	position: absolute;
+	top: 32.5px;
+	left: 32px;
+}
+
+.table_text{
+	font-family: 'Raleway', sans-serif;
+	color: #48267C;
+	padding-left: 18px;
+	line-height: 1px;
+}
+
+#table_name_font{
+	font-size: 16px;
+	font-family:   "Times New Roman", serif; 
+	font-style: italic ;
+}
+
+
+.project_container{
+	top: 705px;
+	position: absolute;
+	z-index: 0;
+
+	height: 640px;
+	width: 960px;	
+	color: white;
+}
+
+.subcon{
+	overflow: hidden;
+	width: 320px;
+	height: 100%;
+	/*text-indent: 2em;*/
+	float: left;
+
+	display: flex;
+  	flex-direction: column;
+  	justify-content: center;
+}
+
+.subcon ul{
+	text-align: left;
+	list-style-type: none;
+	line-height: 25px;
+}
+
+.project_font{
+	font-family: "Microsoft Sans Serif", sans-serif;
+	font-size: 12px;
+}
+
+.item_font{
+	font-size:  20px;
+	font-weight: bold;
+	font-family: 'Raleway', sans-serif;
+}
+
+#transit_background {
+	position: absolute;
+	top: 1440px;
+	z-index: -1;
+    transform: translate3d(-850px, -30px, -1px) scale(1.8, 1.7);
+	transform-origin:0 0;
+
+}
+
+#transit_view{
+	position: absolute;
+	top: 1345px;
+	height: 555px;
+	width: 960px;
+
+}
+
+.aboutme_container{
+	position: absolute;
+	top: 1900px;
+	width: 960px;
+	height: 500px;
+	z-index: 0;
+	color: white;
+	background-color: #48267C;
+	font-family: 'Raleway', sans-serif;
+}
+
+.aboutme_container a{
+	position: absolute;
+	top: 155px;
+	left: 127px;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.aboutme_container p{
+	position: absolute;
+	top: 189px;
+	left: 135px;
+	margin: 0 0;
+	text-align: left;
+
+	font-size: 35px;
+}
+
+.contact_container{
+	position: absolute;
+	top: 2400px;
+	width: 960px;
+	height: 500px;	
+	z-index: 0;
+
+	background-color: white;
+	color: #48267C;
+	font-family: 'Raleway', sans-serif;
+}
+
+#con_int{
+	position: absolute;
+	top:115px;
+	left: 127px;
+	font-weight: bold;
+	font-size: 12px;
+}
+
+#sub_contact{
+	position: absolute;
+	top:140px;
+	left: 135px;
+	height: 250px;
+	width: 700px;
+}
+
+#con_info{
+	position: absolute;
+	width: 350px;
+}
+
+#con_info p{
+	margin: 6px 0px;
+}
+
+#con_right_container{
+	position: absolute;
+	left: 350px; 
+	width: 350px;
+}
+
+#con_table {
+	position: absolute;
+	top: 15px;
+}
+
+#con_table input{
+	border: 1px solid  #48267C;
+	width: 340px; 
+	height: 20px;
+	font-size: 12px;
+	font-family: 'Raleway', sans-serif;
+	color:  #48267C; 
+}
+
+#con_table textarea{
+	border: 1px solid  #48267C;
+	height: 95px; 
+	width: 340px; 
+	resize: none;
+	font-size: 12px;
+	font-family: 'Raleway', sans-serif;
+	color:  #48267C; 
+	line-height: 30px;
+}
+
+#con_right_container p{
+	position: absolute;
+	top: 190px;
+	left: 270px;
+}
+
+#con_right_container p input{
+	background-color: #48267C; 
+	color: white; 
+	width: 77px; 
+	height: 28px; 
+	border: none; 
+	font-size: 15px;  
+	font-family:  "Times New Roman", serif;
+	font-style: italic ;
+}
+
