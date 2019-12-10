@@ -8,8 +8,8 @@
 	$detail_content = array(); //details of each day
 
 	$lat = $lon =  "";
-	$geocode_key = "AIzaSyBPVTPSuM7gg89004kxepJI_0K-VFJFg5I";
-	$sky_api = "bf40c926ecd12df976812fd11a1f64e5";
+	$geocode_key = "***";
+	$sky_api = "***";
 
 	$card_icon_url['humidity'] = 	"https://cdn2.iconfinder.com/data/icons/weather-74/24/weather-16-512.png";
 	$card_icon_url['pressure'] = 	"https://cdn2.iconfinder.com/data/icons/weather-74/24/weather-25-512.png";
