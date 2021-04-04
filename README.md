@@ -1,7 +1,7 @@
 ## CSCI 571
 
 1. HTML and CSS		  
-	[**Migi Bell**](http://jiaqifan.freevar.com/Hw3/hw3.html)
+	[**Migi Bell**](http://jiaqifan.freevar.com/html/)
 2. JSON  
 	[**Largest manufacturers by production (2017) List**](http://jiaqifan.freevar.com/Hw4/hw4.html)
 3. PHP  
